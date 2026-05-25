@@ -1,4 +1,4 @@
-package com.github.SYM;
+package com.github.sym.UnoBasicGame;
 
 import java.util.ArrayList;
 import java.util.Random;
