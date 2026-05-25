@@ -1,4 +1,4 @@
-package com.github.sym.UnoBasicGame;
+package com.github.sym.unobasicgame;
 import java.util.Random;
 
 public class TakeX extends Card {

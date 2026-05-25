@@ -1,4 +1,4 @@
-package com.github.sym.UnoBasicGame;
+package com.github.sym.unobasicgame;
 
 public class Reverse extends Card {
     public Reverse(Board b) {
