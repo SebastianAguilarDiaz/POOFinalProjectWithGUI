@@ -64,11 +64,12 @@ public class Player {
         public void show() {
             System.out.println(this.toString());
         }
+        
         //Esta cosa sirve para el javafx xD
         @Override
         public String toString() {
             return "Jugador " + name + " | Partidas Ganadas: " + gamesWon
-                    + " |Partidas Perdidas: " + gamesLost;
+                    + " | Partidas Perdidas: " + gamesLost;
         }
     }
 }

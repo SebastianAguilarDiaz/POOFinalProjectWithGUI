@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Mauricio\OneDrive\Documentos\0UP\2do semestre\POO\POOFinalProjectWithGUI\src\main\java\com\github\sym\App.java
 C:\Users\Mauricio\OneDrive\Documentos\0UP\2do semestre\POO\POOFinalProjectWithGUI\src\main\java\com\github\sym\PrimaryController.java
 C:\Users\Mauricio\OneDrive\Documentos\0UP\2do semestre\POO\POOFinalProjectWithGUI\src\main\java\com\github\sym\SecondaryController.java
@@ -13,3 +14,22 @@ C:\Users\Mauricio\OneDrive\Documentos\0UP\2do semestre\POO\POOFinalProjectWithGU
 C:\Users\Mauricio\OneDrive\Documentos\0UP\2do semestre\POO\POOFinalProjectWithGUI\src\main\java\com\github\sym\UnoBasicGame\UnoGame.java
 C:\Users\Mauricio\OneDrive\Documentos\0UP\2do semestre\POO\POOFinalProjectWithGUI\src\main\java\com\github\sym\UnoBasicGame\Updatable.java
 C:\Users\Mauricio\OneDrive\Documentos\0UP\2do semestre\POO\POOFinalProjectWithGUI\src\main\java\module-info.java
+=======
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\App.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\controllers\AddPlayerController.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\controllers\MenuController.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\PrimaryController.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\SecondaryController.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\unobasicgame\Board.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\unobasicgame\Card.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\unobasicgame\Game.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\unobasicgame\Numeric.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\unobasicgame\Player.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\unobasicgame\Reverse.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\unobasicgame\Showable.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\unobasicgame\TakeX.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\unobasicgame\Turn.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\unobasicgame\UnoGame.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\com\github\sym\unobasicgame\Updatable.java
+C:\Users\sebas\Desktop\Java\POO\PooParcial3\javaFX\poo_final_project_with_gui\src\main\java\module-info.java
+>>>>>>> principalStage

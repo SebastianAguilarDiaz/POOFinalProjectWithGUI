@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.github.sym.controllers.MenuController">
+
+   <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/></padding>
+
+   <children>
+
+      <Label text="UNO" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+      <Button text="Empezar juego"            onAction="#startGameFunction"                  prefWidth="200" style="-fx-font-size: 14px;"/>
+      <Button text="Estadísticas por jugador" onAction="#displayStatisticsPerPlayerFunction" prefWidth="200" style="-fx-font-size: 14px;"/>
+      <Button text="Estadísticas por partida" onAction="#displayStatisticsPerGameFunction"   prefWidth="200" style="-fx-font-size: 14px;"/>
+      <Button text="Agregar jugador"          onAction="#addPlayerFunction"                  prefWidth="200" style="-fx-font-size: 14px;"/>
+      <Button text="Salir"                    onAction="#exitFunction"                       prefWidth="200" style="-fx-font-size: 14px; -fx-text-fill: red;"/>
+      <!-- Se hace salto de linea con &#10; -->
+      <Text text="Sebastian Aguilar&#10;Mauricio Figueroa&#10;Yazhwhan Morales" style="-fx-font-size: 14px; -fx-text-alignment: center;"/>
+
+   </children>
+   
+</VBox>
