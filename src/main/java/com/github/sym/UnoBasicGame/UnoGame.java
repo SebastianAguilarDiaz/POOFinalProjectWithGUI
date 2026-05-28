@@ -9,14 +9,14 @@ public class UnoGame {
     private Scanner sc;
 
     //receive the main scanner
-    public UnoGame(Scanner sc) {
-        this.players = new ArrayList<>();
-        this.gamesPlayed = new ArrayList<>();
+    public UnoGame(Scanner sc, ArrayList<Player> players, ArrayList<Game> games) {
+        this.players = players;
+        this.gamesPlayed = games;
         this.sc = sc;
     }
 
     //Print on console for a new game
-    public void startGame() {
+    public void startGame(ArrayList<Player> playersList) {
         System.out.println("\n=== INICIAR UNA NUEVA PARTIDA! ===");
 
         if (players.size() < 2){
@@ -24,51 +24,49 @@ public class UnoGame {
             return;
         }
 
-        System.out.print("Cuantos jugadores van a jugar? ");
-        int numPlayers = sc.nextInt();
-        sc.nextLine();
+        
 
-        if (numPlayers < 2) {
-            System.out.println("No se puede iniciar una partida, se necesitan minimo 2 jugadores");
-            return;
-        }
+        // if (numPlayers < 2) {
+        //     System.out.println("No se puede iniciar una partida, se necesitan minimo 2 jugadores");
+        //     return;
+        // }
 
-        if (numPlayers > players.size()) {
-            System.out.println("No hay suficientes jugadores registrados para esa cantidad.");
-            return;
-        }
+        // if (numPlayers > players.size()) {
+        //     System.out.println("No hay suficientes jugadores registrados para esa cantidad.");
+        //     return;
+        // }
 
         //Show registered players
-        System.out.println("Jugadores Disponibles:");
-        for (int i = 0; i < players.size();i++){
-            System.out.println((i+1)+". " + players.get(i).getName());
-        }
+        // System.out.println("Jugadores Disponibles:");
+        // for (int i = 0; i < players.size();i++){
+        //     System.out.println((i+1)+". " + players.get(i).getName());
+        // }
 
         //create actual palyers ArrayList
-        ArrayList<Player> gamePlayers = new ArrayList<>();
+        ArrayList<Player> gamePlayers = playersList;
 
-        for (int i = 0; i < numPlayers; i++) {
-            System.out.println("Seleccione el numero del Jugador " + (i + 1) + ": ");
-            int pIndex = sc.nextInt() - 1;
-            sc.nextLine();
+        // for (int i = 0; i < numPlayers; i++) {
+        //     System.out.println("Seleccione el numero del Jugador " + (i + 1) + ": ");
+        //     int pIndex = sc.nextInt() - 1;
+        //     sc.nextLine();
 
-            if (pIndex < 0 || pIndex >= players.size()) {
-                System.out.println("Por favor, selecciona el numero de un jugador valido. Intenta de nuevo...");
-                i--;
-                continue;
-            }
+        //     if (pIndex < 0 || pIndex >= players.size()) {
+        //         System.out.println("Por favor, selecciona el numero de un jugador valido. Intenta de nuevo...");
+        //         i--;
+        //         continue;
+        //     }
 
-            Player selectedPlayer = players.get(pIndex);
+        //     Player selectedPlayer = players.get(pIndex);
 
-            // if the player is already selected
-            if (gamePlayers.contains(selectedPlayer)) {
-                System.out.println("El jugador no puede efrentarse a si mismo, selecciona a dos personas distintas para una partida.");
-                i--;
-                continue;
-            }
+        //     // if the player is already selected
+        //     if (gamePlayers.contains(selectedPlayer)) {
+        //         System.out.println("El jugador no puede efrentarse a si mismo, selecciona a dos personas distintas para una partida.");
+        //         i--;
+        //         continue;
+        //     }
 
-            gamePlayers.add(selectedPlayer);
-        }
+        //     gamePlayers.add(selectedPlayer);
+        // }
 
         //Create the game
         Game newGame = new Game(sc, gamePlayers);
