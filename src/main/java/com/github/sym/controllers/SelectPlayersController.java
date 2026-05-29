@@ -6,11 +6,10 @@ import com.github.sym.App;
 import com.github.sym.AppState;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
-import javafx.scene.control.TextField;
+
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 

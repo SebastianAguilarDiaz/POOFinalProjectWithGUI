@@ -21,7 +21,7 @@ public abstract class Card implements Showable{
 
     public static final char COLORS[]={'R','A','V','Z'};
 
-    protected static final char background='#';
+    protected static final char background='-';
 
 
 

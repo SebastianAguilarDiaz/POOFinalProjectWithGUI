@@ -22,6 +22,8 @@ public class Game {
         this.board = new Board(this.sc, playersRegistered);
         
     }
+
+    // we show the actual players deck
     public void showDeck(){
         this.board.showDeck();
     }
@@ -51,41 +53,31 @@ public class Game {
     public void play() {
         
 
-
+        // if theres already a winner we dont create another turn
         if (lastTurn != null && lastTurn.playerWon) {
             this.winner=currentPlayer;
             
             this.updateStatistics();
             return;
         }
+
+        // if there are no more turns we end the game with a draw
         if(this.turns==this.maxOfTurns) {
             this.draw=true;
             AppState.getInstance().clearTextOnScreen();
             AppState.getInstance().printTextOnScreen("Empate");
-            AppState.getInstance().addReturnButton();
+            
             return;
         }
         
-        
-        
-        
         currentPlayer = this.players.get(this.board.getActualPlayerIndex());
         Turn currentTurn=new Turn(this.sc,currentPlayer,this.board);
+        
+        // the currentTurn is now the lastTurn
         this.lastTurn=currentTurn;
+
         this.turns++;
         
-
-        
-        
-
-
-
-        
-
-        
-        
-
-        // this.updateStatistics();
     }
 
     public class Statistics implements Updatable, Showable {

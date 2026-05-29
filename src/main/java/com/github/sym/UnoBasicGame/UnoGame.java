@@ -56,6 +56,8 @@ public class UnoGame {
     public Game getLastGame(){
         return this.gamesPlayed.getLast();
     }
+
+    // we show the actual players deck
     public void showDeck(){
         this.gamesPlayed.getLast().showDeck();
     }

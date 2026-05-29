@@ -44,7 +44,8 @@ public class AppState {
         this.numSpinner.setValueFactory(factory);
     
     }
-
+    
+    // we show the actual players deck
     public void showDeck(){
         this.manager.showDeck();
     }

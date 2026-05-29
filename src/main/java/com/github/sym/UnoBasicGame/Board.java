@@ -1,7 +1,7 @@
 package com.github.sym.unobasicgame;
 
 import java.util.ArrayList;
-import java.util.Random;
+
 import java.util.Scanner;
 import com.github.sym.AppState;
 
@@ -11,7 +11,7 @@ public class Board {
     public static final int CARDS_PER_PLAYER = 7;
     private int flow = 1;
     private int actualPlayerIndex=0;
-    private Scanner sc;
+    
     private ArrayList<ArrayList<Card>> playersDecks=new ArrayList<ArrayList<Card>>();
     private Card lastCard;
     private boolean deckOnScreen=false;
@@ -19,7 +19,7 @@ public class Board {
     public Board(Scanner sc, ArrayList<Player> players) {
         
         this.players=players;
-        this.sc = sc;
+        
         
         this.makeDecks();
         this.setLastCard();
@@ -80,10 +80,6 @@ public class Board {
         return playersDecks.get(this.getActualPlayerIndex());
     }
 
-    public int getPlayerDeckSize(int index) {
-        return this.playersDecks.get(index).size();
-    }
-
     public void printBoard() {
         this.clearScreen();
         AppState.getInstance().printLineOnScreen("Ultima carta");
@@ -94,7 +90,10 @@ public class Board {
 
     }
 
+    // we show the actual players deck
     public void showDeck(){
+
+        // if the decx is already on screen we dont show it again
         if(this.deckOnScreen) return;
         // first iterates on height
         for(int j=0;j<Card.HEIGHT;j++){
