@@ -19,6 +19,9 @@ public class TakeX extends Card {
         this.setFront();
     }
 
+    public int getX(){
+        return this.x;
+    }
     public void takeX() {
         b.addCardsToAPlayer(this.x);
         

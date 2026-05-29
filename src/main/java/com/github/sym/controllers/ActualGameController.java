@@ -38,6 +38,7 @@ public class ActualGameController {
         
         // if someone won or the game result was a draw we must add the return button
         if(AppState.getInstance().getGamesPlayed().getLast().lastTurn.playerWon || AppState.getInstance().getGamesPlayed().getLast().getDraw()){
+            
             AppState.getInstance().addReturnButton();
 
         }

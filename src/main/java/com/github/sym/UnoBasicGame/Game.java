@@ -55,8 +55,10 @@ public class Game {
 
         // if theres already a winner we dont create another turn
         if (lastTurn != null && lastTurn.playerWon) {
-            this.winner=currentPlayer;
+            AppState.getInstance().clearTextOnScreen();
             
+            this.winner=currentPlayer;
+            AppState.getInstance().printTextOnScreen("Ha ganado "+this.winner.getName());
             this.updateStatistics();
             return;
         }

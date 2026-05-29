@@ -72,6 +72,13 @@ public abstract class Card implements Showable{
 
         // if they are from the same type and not numeric cards
         else if (this.getCardType() == lastCard.getCardType() && this.getCardType()!=Card.NUMERIC){
+            if(this.getCardType()==Card.TAKE_X){
+                TakeX n1=(TakeX)this;
+                TakeX n2=(TakeX)lastCard;
+                if((n1.getX()==0 && n2.getX()!=0 ) || (n2.getX()==0 && n1.getX()!=0 ))
+                    return false;
+
+            }
             return true;
         }   
 
