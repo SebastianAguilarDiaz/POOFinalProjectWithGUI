@@ -10,7 +10,7 @@ public class Game {
     private int maxOfTurns = 40;
     private Statistics statisticsOfTheGame;
     private Scanner sc;
-    private int turns=38;
+    private int turns=0;
     public Turn lastTurn;
     private Player currentPlayer;
     private boolean draw = false;
