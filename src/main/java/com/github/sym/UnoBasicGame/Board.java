@@ -3,19 +3,21 @@ package com.github.sym.unobasicgame;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import com.github.sym.AppState;
 
 public class Board {
     private ArrayList<Player> players;
     
     public static final int CARDS_PER_PLAYER = 7;
     private int flow = 1;
-    private int actualPlayerIndex;
+    private int actualPlayerIndex=0;
     private Scanner sc;
     private ArrayList<ArrayList<Card>> playersDecks=new ArrayList<ArrayList<Card>>();
     private Card lastCard;
+    private boolean deckOnScreen=false;
 
     public Board(Scanner sc, ArrayList<Player> players) {
-        this.actualPlayerIndex=0;
+        
         this.players=players;
         this.sc = sc;
         
@@ -25,7 +27,7 @@ public class Board {
 
     }
     
-
+    
     public void makeDecks() {
         for(int i=0;  i<players.size();i++){
             ArrayList<Card> actualDeck =new ArrayList<Card>(); 
@@ -75,18 +77,25 @@ public class Board {
     }
 
     public ArrayList<Card> getPlayersDeck() {
-        return playersDecks.get(actualPlayerIndex);
+        return playersDecks.get(this.getActualPlayerIndex());
+    }
+
+    public int getPlayerDeckSize(int index) {
+        return this.playersDecks.get(index).size();
     }
 
     public void printBoard() {
         this.clearScreen();
-        System.out.println("Ultima carta");
+        AppState.getInstance().printLineOnScreen("Ultima carta");
         this.lastCard.show();
+        AppState.getInstance().printLineOnScreen();
+        AppState.getInstance().printLineOnScreen("Turno de "+this.players.get(this.getActualPlayerIndex()).getName());
+        
 
-        // when the player is ready to play 
-        System.out.println("Presione enter para ver el mazo del jugador "+ this.players.get(this.getActualPlayerIndex()).getName());
-        sc.nextLine();
+    }
 
+    public void showDeck(){
+        if(this.deckOnScreen) return;
         // first iterates on height
         for(int j=0;j<Card.HEIGHT;j++){
 
@@ -95,21 +104,23 @@ public class Board {
                 
                 // finally iterates on the width of each card
                 for(int k=0;k<Card.WIDTH;k++){
-                    System.out.print(this.playersDecks.get(this.getActualPlayerIndex()).get(i).getChar(k, j));
+                    AppState.getInstance().printTextOnScreen(this.playersDecks.get(this.getActualPlayerIndex()).get(i).getChar(k, j));
                 }
-                System.out.print(' ');
+                AppState.getInstance().printTextOnScreen(' ');
+                
                 
             }
-            System.out.println();
+            AppState.getInstance().printLineOnScreen();
         }
-        System.out.println();
+        AppState.getInstance().printLineOnScreen();
+        this.deckOnScreen= true;
 
     }
 
     // so the next player doesnt see the last players deck
     public void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        this.deckOnScreen=false;
+        AppState.getInstance().clearTextOnScreen();
     }
 
     public Card getLastCard() {

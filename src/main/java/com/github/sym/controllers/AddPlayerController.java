@@ -25,7 +25,7 @@ public class AddPlayerController {
 
     
     public void addPlayerFunction() {
-        System.out.println("Boton presionado");
+        
         String name = textField.getText();
         boolean added = AppState.getInstance().addPlayer(name);
 

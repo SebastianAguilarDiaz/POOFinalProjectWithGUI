@@ -20,6 +20,8 @@ public class App extends Application {
         scene = new Scene(loadFXML("views/Menu"), 640, 480);
         stage.setTitle("UNO");
         stage.setScene(scene);
+        stage.setMaximized(true);
+
         stage.show();
     }
 

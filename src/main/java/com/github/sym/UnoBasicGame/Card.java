@@ -1,6 +1,6 @@
 package com.github.sym.unobasicgame;
 import java.util.Random;
-
+import com.github.sym.AppState;
 
 public abstract class Card implements Showable{
     
@@ -20,6 +20,8 @@ public abstract class Card implements Showable{
     public static final int BLUE = 4;
 
     public static final char COLORS[]={'R','A','V','Z'};
+
+    protected static final char background='#';
 
 
 
@@ -58,9 +60,9 @@ public abstract class Card implements Showable{
     public void show() {
         for (int j = 0; j < Card.HEIGHT; j++) {
             for (int i = 0; i < Card.WIDTH; i++) {
-                System.out.print(this.getChar(i, j));
+                AppState.getInstance().printTextOnScreen(this.getChar(i, j));
             }
-            System.out.println();
+            AppState.getInstance().printLineOnScreen();
         }
     }
 

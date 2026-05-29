@@ -2,7 +2,7 @@ package com.github.sym.unobasicgame;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import com.github.sym.AppState;;
 public class Game {
     private ArrayList<Player> players;
     public Player winner;
@@ -10,22 +10,36 @@ public class Game {
     private int maxOfTurns = 40;
     private Statistics statisticsOfTheGame;
     private Scanner sc;
+    private int turns=38;
+    public Turn lastTurn;
+    private Player currentPlayer;
+    private boolean draw = false;
 
     public Game(Scanner sc, ArrayList<Player> playersRegistered) {
         this.players = playersRegistered;
         this.sc = sc;
         this.statisticsOfTheGame = new Statistics();
         this.board = new Board(this.sc, playersRegistered);
+        
     }
-
+    public void showDeck(){
+        this.board.showDeck();
+    }
     public ArrayList<Player> getPlayers() {
         return this.players;
+    }
+
+    public int getNumOfCardsOfTheDeck(){
+        return this.board.getPlayersDeck().size();
     }
 
     public Statistics getStatistics() {
         return this.statisticsOfTheGame;
     }
 
+    public boolean getDraw(){
+        return this.draw;
+    }
     public void updateStatistics() {
         this.statisticsOfTheGame.update(null);
         for (Player p : players) {
@@ -35,31 +49,43 @@ public class Game {
     }
 
     public void play() {
-        System.out.println("\n=== COMIENZA UNA NUEVA PARTIDA ===");
-        int turns = 0;
         
-        this.board.setActualPlayerIndex(0);
-        Player currentPlayer = this.players.get(this.board.getActualPlayerIndex());
-        do{
-            
-            Turn currentTurn = new Turn(this.sc, currentPlayer, this.board);
-            
-            currentTurn.throwCard();
 
-            if (currentTurn.playerWon) {
-                this.winner = currentPlayer;
-                System.out.println("\n" + this.winner.getName() + " ha ganado la partida!");
-            }
-            turns++;
-            this.board.setActualPlayerIndex(currentTurn.nextPlayer);
-            currentPlayer=this.players.get(this.board.getActualPlayerIndex());
-        }while(this.winner == null && turns < this.maxOfTurns);
-        
-        if (this.winner == null) {
-            System.out.println("\nSe alcanzo el limite de turnos (" + this.maxOfTurns + "). Es un empate.");
+
+        if (lastTurn != null && lastTurn.playerWon) {
+            this.winner=currentPlayer;
+            
+            this.updateStatistics();
+            return;
+        }
+        if(this.turns==this.maxOfTurns) {
+            this.draw=true;
+            AppState.getInstance().clearTextOnScreen();
+            AppState.getInstance().printTextOnScreen("Empate");
+            AppState.getInstance().addReturnButton();
+            return;
         }
         
-        this.updateStatistics();
+        
+        
+        
+        currentPlayer = this.players.get(this.board.getActualPlayerIndex());
+        Turn currentTurn=new Turn(this.sc,currentPlayer,this.board);
+        this.lastTurn=currentTurn;
+        this.turns++;
+        
+
+        
+        
+
+
+
+        
+
+        
+        
+
+        // this.updateStatistics();
     }
 
     public class Statistics implements Updatable, Showable {

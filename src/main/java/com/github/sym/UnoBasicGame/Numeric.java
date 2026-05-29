@@ -23,7 +23,7 @@ public class Numeric extends Card {
             for(int i=0;i<Card.WIDTH;i++){
                 if(j==3 && i==3)    this.front[j][i]=((Integer)this.num).toString().charAt(0);
                 else if(j==4 && i==4)    this.front[j][i]=Card.COLORS[this.getColor()-1];
-                else this.front[j][i]='-';
+                else this.front[j][i]=Card.background;
                 
             }
         }
